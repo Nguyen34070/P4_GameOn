@@ -32,6 +32,7 @@
     .hero-section {
       display: block;
       box-shadow: unset;
+      height: auto;
     }
     .hero-content {
       background: #fff;

@@ -15,7 +15,6 @@ const btnSubmit = document.querySelector('.btn-submit');// a voir
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-spanValid
 
 // launch modal form
 function launchModal() {
@@ -30,3 +29,9 @@ function closeModal() {
       modalbg.style.display = "none";  
   });
 }
+
+btnSubmit.addEventListener('submit', confirmModal);
+
+//function confirmModal(e) {
+  //e.preventDefault();
+  //const name = formData.get('first')
