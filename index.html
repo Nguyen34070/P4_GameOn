@@ -45,7 +45,7 @@
       </div>
               <!-- bouton confirmation de soumission-->         
       <div class="bground">
-       <div class="confirmMsg">
+       <div class="body_message_confirm">
           <div class="textConfirm">
              <p>Merci !</p>
              <p>Votre réservation a bien été reçue .</p>
@@ -60,35 +60,35 @@
               <div class="formData first-container">
                 <label>Prénom</label><br>
                 <input class="text-control" type="text" id="first" name="first" minlength="2" placeholder="votre prénom"><br>
-                <span class="errorName" id="errorName1"></span>
+                <span class="errorForm" id="errorFirst"></span>
               </div>
 
               <div
                 class="formData">
                 <label>Nom</label><br>
                 <input class="text-control" type="text" id="last" name="last" minlength="2" placeholder="votre nom"><br>
-                <span class="errorName" id="errorName2"></span>
+                <span class="errorForm" id="errorLast"></span>
               </div>
 
               <div
                 class="formData">
                 <label>E-mail</label><br>
-                <input class="text-control" type="email" id="email" name="email" placeholder="Ex:jeanvaljean@hotmail.com" autocomplete="off"><br>
-                <span class="errorName" id="errorName3"></span>
+                <input class="text-control" type="email" id="email" name="email" placeholder="Ex:jeanvaljean@hotmail.com"><br>
+                <span class="errorForm" id="errorMail"></span>
               </div>
 
               <div
                 class="formData">
                 <label>Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" autocomplete="off" max="2008-12-31"><br>
-                <span class="errorName" id="errorName4"></span>
+                <input class="text-control" type="date" id="birthdate" name="birthdate" max="2008-12-31"><br>
+                <span class="errorForm" id="errorBirthDate"></span>
               </div>
 
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" placeholder="0" min="0" max="99">
-                <span class="errorName" id="errorName5"></span>
+                <span class="errorForm" id="errorQuantity"></span>
               </div>
 
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
@@ -116,7 +116,7 @@
                 <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland">
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>Portland</label><br>                 
-                  <span class="errorName" id="errorName6"></span>
+                  <span class="errorForm" id="errorName6"></span>
               </div>
 
               <div class="formData">
