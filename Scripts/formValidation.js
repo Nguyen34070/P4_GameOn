@@ -5,33 +5,35 @@ function checkFields() {
     const email =  document.getElementById('email');
     const birthdate =  document.getElementById('birthdate');
     const quantity =  document.getElementById('quantity');
-    const radioChecked = document.querySelectorAll('input[name="location"]');
-   
-   // condition pour que les messages d'erreur s'affiche en même temps
-    if (
-     (!first.value || first.value.length < 2 )||
-     (!last.value || last.value.length < 2 ) ||
-     (!validateEmail(email.value)) ||
-     (!validateBirtdate(birthdate.value) ) ||
-     (quantity.value < 0) ||
-     (!radioChecked) 
-     ) {
-   // erreur pour le prénom    
-       if (!first.value || first.value.length < 2 ) {
+    const term = document.getElementById('checkbox1');
+    isValid = false;
+
+   // erreur pour le prénom
+   if (
+    (!first.value || first.value.length < 2 )||
+    (!last.value || last.value.length < 2 ) ||
+    (!validateEmail(email.value)) ||
+    (!validateBirtdate(birthdate.value) ) ||
+    (quantity.value < 0) ||
+    (!term.checked)
+    ) {
+       if (first.value.length < 2 ) {
          first.style.border = '2px solid red';
          document.getElementById('errorFirst').innerHTML = 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.';
        } else {
          first.style.border = 'unset';
          document.getElementById('errorFirst').innerHTML = '';
+         first.style.border = '2px solid rgb(5, 190, 5)';
        }
    
    // erreur pour le nom
-       if (!last.value || last.value.length < 2 ) {
+       if (last.value.length < 2 ) {
          last.style.border = '2px solid red';
          document.getElementById('errorLast').innerHTML = 'Veuillez entrer 2 caractères ou plus pour le champ du nom.';
        } else {
          last.style.border = 'unset';
          document.getElementById('errorLast').innerHTML = '';
+         last.style.border = '2px solid rgb(5, 190, 5)';
        }
    
    // erreur pour le mail    
@@ -41,6 +43,7 @@ function checkFields() {
        } else {
          email.style.border = 'unset';
          document.getElementById('errorMail').innerHTML = '';
+         email.style.border = '2px solid rgb(5, 190, 5)';
        }
    
    // erreur date de naissance
@@ -50,6 +53,7 @@ function checkFields() {
        } else {
          birthdate.style.border = 'unset';
          document.getElementById('errorBirthDate').innerHTML = '';
+         birthdate.style.border = '2px solid rgb(5, 190, 5)';
        }
    
    // erreur pour le nombre de participation dans des tournoi    
@@ -59,24 +63,24 @@ function checkFields() {
        } else {
          quantity.style.border = 'unset';
          document.querySelector('#errorQuantity').innerHTML = '';
+         quantity.style.border = '2px solid rgb(5, 190, 5)';
        }
    
-   // erreur pour les localisation     
-       if(!radioChecked.checked) {
-         document.querySelector('#errorName6').innerHTML = 'Vous devez choisir une localisation';
+   // erreur pour les acceptation  
+       if(!term.checked) {
+         document.getElementById('errorTerm').innerHTML = 'Vous devez accepter les termes et conditions.';
        } else {
-         document.querySelector('#errorName6').innerHTML = '';
+         document.getElementById('errorTerm').innerHTML = '';
        }
-   
-   // erreur pour tout le formulaire
-    } else {
-         document.querySelectorAll('#errorFirst', '#errorLast', '#errorMail', '#errorBirthDate', '#errorQuantity', '#errorName6').innerHTML = '';
-         document.getElementById('email').style.border = 'unset';
-         showConfirmMsg();
-         return true;
-    }
-   }
-   
+
+  // fin de validation des input pour retourner true
+      } else {
+        document.querySelectorAll('#errorFirst', '#errorLast', '#errorMail', '#errorBirthDate', '#errorQuantity', '#errorTerm').innerHTML = '';
+        document.getElementById('email').style.border = 'unset';
+        showConfirmMsg();
+        return true;
+      }
+   };  
    // regex pour la validation du mail
    function validateEmail(email) {
      let re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -87,4 +91,27 @@ function checkFields() {
    function validateBirtdate(birthdate) {
      let re = /^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$/;
      return re.test(birthdate);
-   };   
+   };
+
+   // fonction pour la localisation
+   const checkboxContainer = () => {
+    const errorDisplay = document.getElementById("errorChecked");
+    const radios = document.querySelectorAll('input[name="location"]');
+    isValid = false;
+  
+    for (let i = 0; i < radios.length; i++) {
+      if (radios[i].checked && checkFields === true) {
+        errorDisplay.innerHTML = "";
+        showConfirmMsg();
+        break;
+      } else if (radios[i].checked) {
+        errorDisplay.style.display = "none";
+      }
+       else {
+        errorDisplay.innerHTML = "Veuillez sélectionner un choix.";
+        errorDisplay.style.color = "red";
+        errorDisplay.style.fontSize = "0.6em";
+      }
+    }
+    return isValid; 
+  };
