@@ -12,11 +12,10 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const btnSubmit = document.querySelector('.submitBtn');// a voir !!
-const bodyMsg = document.querySelector('.body_message_confirm');// a voir !!
-const modalBody = document.querySelector('.content');// a voir !!
+const btnSubmit = document.querySelector('.submitBtn');
+const bodyMsg = document.querySelector('.body_message_confirm');
+const modalBody = document.querySelector('.content');
 const closeBtn = document.querySelector('.close');
-
 
 // launch modal form
 function launchModal() {

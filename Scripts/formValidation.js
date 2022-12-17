@@ -111,7 +111,6 @@ function quantityInput(value) {
 };
 // acceptation des termes et conditions
 function checkboxInput() {
-    const checkbox = document.querySelector('#checkbox1');// a voir ou a effacer car sert a rien
     const errorInput = document.getElementById('errorTerm');
     let validate = false;
 
@@ -133,14 +132,14 @@ const checkboxContainer = () => {
       if (radios[i].checked) {
         errorDisplay.innerHTML = "";
         errorDisplay.style.display = "none";
-        validate = true;// a voir 
+        validate = true;
         break;
       }
        else {
         errorDisplay.innerHTML = "Veuillez sélectionner un choix.";
         errorDisplay.style.color = "red";
         errorDisplay.style.fontSize = "0.6em";
-        validate = false;// a voir 
+        validate = false; 
       }
     }
     return validate; 
@@ -200,7 +199,7 @@ const validateForm = (e) => {
 
     } else {
         modalBody.style.display = 'block';
-        bodyMsg.style.display = 'none'
+        bodyMsg.style.display = 'none';
     }
 };
 
