@@ -1,5 +1,6 @@
 // récupération des id des inputs
 const inputs = document.querySelectorAll("#first, #last, #email, #birthdate, #quantity, input[name=location] , #checkbox1 ");
+// pour le clique de la soumission du formulaire(l'événement se trouve à la fin du code de cette page)
 const form = document.querySelector("form");
 const inputSubmit = form[form.length -1];
 
