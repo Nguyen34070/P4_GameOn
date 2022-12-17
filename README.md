@@ -32,5 +32,3 @@ Voici le projet n°4 de la formation de développeur Front-end chez Openclassroo
 ## Lien vers la page du projet : 
 
 Vous pouvez consulter mon projet fini sur le lien suivant : https://nguyen34070.github.io/P4_GameOn/
-
-## Projet validé par W3C :
