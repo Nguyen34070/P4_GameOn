@@ -1,7 +1,7 @@
 // fonction pour les erreurs dans les input
 function checkFields() {
-    const first =  document.getElementById('first');
-    const last =  document.getElementById('last');
+    const first = document.getElementById('first');
+    const last = document.getElementById('last');
     const email =  document.getElementById('email');
     const birthdate =  document.getElementById('birthdate');
     const quantity =  document.getElementById('quantity');

@@ -1,4 +1,4 @@
-// Fonction de la navbar
+// affichage de la navbar
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -17,19 +17,12 @@ const bodyMsg = document.querySelector('.body_message_confirm');// a voir !!
 const modalBody = document.querySelector('.content');// a voir !!
 const closeBtn = document.querySelector('.close');
 
+
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-
-// affichage du message de la confirmation d'inscription
-function showConfirmMsg() {
-  bodyMsg.style.display = "block";
-  modalBody.style.display = "none";
-}
-btnSubmit.addEventListener("click", showConfirmMsg);
 
 // fermeture du message de confirmation d'inscription
 function closeMsg() {
@@ -42,4 +35,4 @@ btnSubmit.addEventListener("click", closeMsg);
 function closeModal() {
   modalbg.style.display = "none";
 }
-closeBtn.addEventListener("click", closeModal)
+closeBtn.addEventListener("click", closeModal);
