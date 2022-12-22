@@ -1,10 +1,11 @@
 // récupération des id des inputs
 const inputs = document.querySelectorAll("#first, #last, #email, #birthdate, #quantity, input[name=location] , #checkbox1 ");
-// pour le clique de la soumission du formulaire(l'événement se trouve à la fin du code de cette page)
+
 const form = document.querySelector("form");
+// pour le clique de la soumission du formulaire(l'événement se trouve à la fin du code de cette page)
 const inputSubmit = form[form.length -1];
 
-// allez d'une input à l'autre
+// évènement qui permet de passer dans chacun des inputs 
 inputs.forEach((input) => {
     input.addEventListener('input', (e) => {
         switch(e.target.id) {
@@ -23,7 +24,7 @@ inputs.forEach((input) => {
         }
     })
 });
-// l'input du prénom
+// pour la valeur dans l'input du prénom
 function firstInput(value) {
     const first = document.querySelector('#first');
     const errorInput = document.getElementById('errorFirst');
@@ -41,7 +42,7 @@ function firstInput(value) {
     }
     return validate;
 };
-// l'input du nom
+// pour la valeur dans l'input du nom
 function lastInput(value) {
     const last = document.querySelector('#last');
     const errorInput = document.getElementById('errorLast');
@@ -58,7 +59,7 @@ function lastInput(value) {
     }
     return validate;
 };
-// l'input de l'email
+// pour la valeur dans l'input de l'email avec un regex (ligne 67) pour la validation d'une adresse mail
 function emailInput(value) {
     const email = document.querySelector('#email');
     const errorInput = document.getElementById('errorMail');
@@ -75,7 +76,7 @@ function emailInput(value) {
     }
     return validate;
 };
-// l'input de la date de naissance
+// pour la valeur dans l'input de la date de naissance avec un regex (ligne 84) pour valider la date de naissance
 function birthdateInput(value) {
     const birthdate = document.querySelector('#birthdate');
     const errorInput = document.getElementById('errorBirthDate');
@@ -92,7 +93,7 @@ function birthdateInput(value) {
     }
     return validate;
 };
-// l'input des quantitées de tournoi participé
+// pour la valeur dans l'input des quantitées de tournoi participé
 function quantityInput(value) {
     const quantity = document.querySelector('#quantity');
     const errorInput = document.getElementById('errorQuantity');
@@ -109,7 +110,7 @@ function quantityInput(value) {
     }
     return validate;
 };
-// acceptation des termes et conditions
+// pour l'acceptation des termes et conditions de type radio
 function checkboxInput() {
     const errorInput = document.getElementById('errorTerm');
     let validate = false;
@@ -122,7 +123,7 @@ function checkboxInput() {
     }
     return validate;
 };
-// la localisation
+// pour la localisation de type radio avec plusieur choix de case à cocher
 const checkboxContainer = () => {
     const errorDisplay = document.getElementById("errorChecked");
     const radios = document.querySelectorAll('input[name="location"]');
@@ -136,7 +137,7 @@ const checkboxContainer = () => {
         break;
       }
        else {
-        errorDisplay.innerHTML = "Veuillez sélectionner un choix.";
+        errorDisplay.innerHTML = "Veuillez sélectionner une localisation.";
         errorDisplay.style.color = "red";
         errorDisplay.style.fontSize = "0.6em";
         validate = false; 
@@ -170,7 +171,7 @@ const validateForm = (e) => {
         }
         return data;
     };
-// vérifie la valeur des inputs
+// push des valeurs dans un tableau pour vérifier si elles sont vraie
     const formValid = (values) => {
         let validInput = [];
 
