@@ -59,7 +59,7 @@ function lastInput(value) {
     }
     return validate;
 };
-// pour la valeur dans l'input de l'email avec un regex (ligne 67) pour la validation d'une adresse mail
+// pour la valeur dans l'input de l'email avec un regex pour la validation d'une adresse mail
 function emailInput(value) {
     const email = document.querySelector('#email');
     const errorInput = document.getElementById('errorMail');
@@ -76,7 +76,7 @@ function emailInput(value) {
     }
     return validate;
 };
-// pour la valeur dans l'input de la date de naissance avec un regex (ligne 84) pour valider la date de naissance
+// pour la valeur dans l'input de la date de naissance avec un regex pour valider la date de naissance
 function birthdateInput(value) {
     const birthdate = document.querySelector('#birthdate');
     const errorInput = document.getElementById('errorBirthDate');
@@ -124,7 +124,7 @@ function checkboxInput() {
     return validate;
 };
 // pour la localisation de type radio avec plusieur choix de case à cocher
-const checkboxContainer = () => {
+function checkboxContainer() {
     const errorDisplay = document.getElementById("errorChecked");
     const radios = document.querySelectorAll('input[name="location"]');
     validate = false;
@@ -143,7 +143,7 @@ const checkboxContainer = () => {
         validate = false; 
       }
     }
-    return validate; 
+    return validate;
   };
   // récupération des valeurs dans les inputs
 const validateForm = (e) => {
